@@ -41,14 +41,19 @@ int getWord(char w[WORD]){
 }
 
 int substring (char* str1, char* str2){
-    for(int i = 0, j = 0; i < strlen(str1); i++){
+    int length2 = strlen(str2);
+    int length1 = 0;
+    length1 = strlen(str1);
+    //length2 = strlen(str2);
+
+    for(int i = 0, j = 0; i < length1; i++){
         if(*(str2 + j) != *(str1 + i)){
             j = 0; 
         }
         if(*(str2 + j) == *(str1 + i)){
             j++; 
         }
-        if(j == strlen(str2)){
+        if(j == length2){
             return 1;
         }
     }
@@ -56,24 +61,28 @@ int substring (char* str1, char* str2){
 }
 
 int similar (char *s, char *t, int n){
+    int length1 = 0;
+    length1 = strlen(s);
+    int length2 = 0;
+    length2 = strlen(t);
     int counter = 0;
     int j = 0;
     if(!strcmp(s,t)){
         return 1;
     }
 
-    for(int i = 0; i < strlen(s); i++){
+    for(int i = 0; i < length1; i++){
         if((*(s + i) != *(t + j))){
             counter++;
         }
-        if(*(s + i) == *(t + j)){
+        if((*(s + i)) == (*(t + j))){
             j++; 
         }
     }
     if(counter != n){
         return 0;
     }
-    if(j == strlen(t)){
+    if(j == length2){
         return 1;
     }
     return 0;
@@ -105,35 +114,6 @@ void print_similar_words(char *str){
 
 
 int main(){
-    /*
-    int counter1 = 0;
-    char s[LINE];
-    counter1 = getLine(s);
-    printf("counter1 = %d\n", counter1);
-    printf("the string is: %s",s);
-    */
-    /*
-    int counter2 = 0;
-    char w[WORD];
-    counter2 = getWord(w);
-    printf("counter2 = %d\n", counter2);
-    printf("the string is: %s",w);
-    */
-    /*
-    int counter3 = 0;
-    char* str1 = "gagal";
-    char* str2 = "aga";
-    counter3 = substring(str1, str2);
-    printf("counter3 = %d\n", counter3);
-    */
-    /*
-    int counter4 = 0;
-    char* s = "cats";
-    char* t = "cat";
-    counter4 = similar(s, t, 1);
-    printf("counter4 = %d\n", counter4);
-    */
-
     char array[LINE];
     char array2[LINE];
     getLine(array);
