@@ -32,7 +32,7 @@ int insertion_sort(int* arr, int len){
 int main(){
     int arr[size] ={0};
     int temp = 0;
-    for(int i = 0; i < 4; i++){
+    for(int i = 0; i < size; i++){
         scanf("%d",&temp);
         *(arr + i) = temp;
     }
