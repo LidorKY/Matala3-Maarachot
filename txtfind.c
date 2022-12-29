@@ -41,21 +41,14 @@ int getWord(char w[WORD]){
 }
 
 int substring (char* str1, char* str2){
-    int length_str1 = strlen(str1);
-    int length_str2 = strlen(str2);
-
-    if(length_str1 < length_str2){
-        return 0;//not substring
-    }   
-
-    for(int i = 0, j = 0; i < length_str1; i++){
+    for(int i = 0, j = 0; i < strlen(str1); i++){
         if(*(str2 + j) != *(str1 + i)){
             j = 0; 
         }
         if(*(str2 + j) == *(str1 + i)){
             j++; 
         }
-        if(j == length_str2){
+        if(j == strlen(str2)){
             return 1;
         }
     }
@@ -63,15 +56,13 @@ int substring (char* str1, char* str2){
 }
 
 int similar (char *s, char *t, int n){
-    int length_str1 = strlen(s);
-    int length_str2 = strlen(t);
     int counter = 0;
     int j = 0;
     if(!strcmp(s,t)){
         return 1;
     }
 
-    for(int i = 0; i < length_str1; i++){
+    for(int i = 0; i < strlen(s); i++){
         if((*(s + i) != *(t + j))){
             counter++;
         }
@@ -82,7 +73,7 @@ int similar (char *s, char *t, int n){
     if(counter != n){
         return 0;
     }
-    if(j == length_str2){
+    if(j == strlen(t)){
         return 1;
     }
     return 0;
