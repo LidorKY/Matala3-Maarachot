@@ -43,5 +43,6 @@ int main(){
     for(int i = 1; i < size; i++){
         printf(",%d",*(arr + i));
     }
+    printf("\n");
 return 0;
 }
