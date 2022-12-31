@@ -114,37 +114,9 @@ void print_similar_words(char *str){
 
 
 int main(){
-    /*
-    int counter1 = 0;
-    char s[LINE];
-    counter1 = getLine(s);
-    printf("counter1 = %d\n", counter1);
-    printf("the string is: %s",s);
-    */
-    /*
-    int counter2 = 0;
-    char w[WORD];
-    counter2 = getWord(w);
-    printf("counter2 = %d\n", counter2);
-    printf("the string is: %s",w);
-    */
-    /*
-    int counter3 = 0;
-    char* str1 = "gagal";
-    char* str2 = "aga";
-    counter3 = substring(str1, str2);
-    printf("counter3 = %d\n", counter3);
-    */
-    /*
-    int counter4 = 0;
-    char* s = "cats";
-    char* t = "cat";
-    counter4 = similar(s, t, 1);
-    printf("counter4 = %d\n", counter4);
-    */
 
-    char array[LINE];
-    char array2[LINE];
+    char array[LINE] = {0};
+    char array2[LINE] = {0};
     getLine(array);
     char temp = '1';
     int i;
@@ -165,11 +137,5 @@ int main(){
     else{
     print_similar_words(array2);
     }
-
-    
-
-
-
-
     return 0;
 }

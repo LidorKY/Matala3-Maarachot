@@ -1,16 +1,18 @@
-all: isort txtfind
+all: Sender Receiver
 
-isort: isort.o
-	gcc -Wall -g -o isort isort.o
+Sender: Sender.o
+	gcc -Wall -g -o Sender Sender.o
 
-isort.o: isort.c
-	gcc -Wall -g -c isort.c
+Receiver: Receiver.o
+	gcc -Wall -g -o Receiver Receiver.o
 
-txtfind: txtfind.o
-	gcc -Wall -g -o txtfind txtfind.o
+Sender.o: Sender.c
+	gcc -Wall -g -c Sender.c
 
-txtfind.o: txtfind.c
-	gcc -Wall -g -c txtfind.c
+Receiver.o: Receiver.c
+	gcc -Wall -g -c Receiver.c
 
 clean:
 	rm -f *.o
+	
+
