@@ -89,7 +89,7 @@ int similar (char *s, char *t, int n){
 }
 
 void printlines (char *str){
-    char array[length_of_text][LINE] = {'0'};
+    char array[length_of_text][LINE] = {0};
 
     for(int i = 0; i < length_of_text-2; i++){
         getLine(array[i]);
@@ -100,7 +100,7 @@ void printlines (char *str){
 }
 
 void print_similar_words(char *str){
-    char array[length_of_text][LINE][WORD] = {'0'};
+    char array[length_of_text][LINE][WORD] = {0};
     
     for(int i = 0; i < length_of_text-2; i++){
         for(int j = 0; j < LINE; j++){
